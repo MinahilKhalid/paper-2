@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+    .row
+        
+        <br>
+            a(href="/products/add", class="btn btn-success float-right") Create New
+    table.table
+
+     h1 Edureka`s Course List
+        thead
+            tr
+                th Course Name
+                th Course id
+                th Course Duration(Hrs)
+                th Course Fee(USD)
+                th actions
+
+        tbody
+            each product in products
+                tr  
+                    td=product.name
+                    td=product.contact
+                    td=product.city
+                    td=product.service
+                    td
+                        a(href="/products/delete/"+product._id, class="btn btn-danger") Delete
+                        a(href="/products/edit/"+product._id, class="btn btn-warning") Edit
+
+
